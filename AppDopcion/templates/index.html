@@ -5,7 +5,7 @@
 {% block content %}
 <div class="container mt-5">
 
-  <!--barra de presentacion-->
+  <!--barrita negra de presentacion-->
   <div class="text-center mb-5">
     <h1 class="display-4 text">Conoce a tu nuevo amigo 🐶🐱</h1>
     <p class="parrafo-inicio">"Hasta que no hayas amado a un animal, una parte de tu alma permanecerá dormida" - Anatole France</p>
@@ -15,7 +15,7 @@
     </p>
   </div>
 
-<!--este es el carrusel-->
+<!--carrusel que se mueve-->
 <div id="carruselTestimonios" class="carousel slide mt-5" data-bs-ride="carousel">
   <div class="carousel-inner">
 
@@ -61,5 +61,18 @@
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="visually-hidden">Siguiente</span>
   </button>
+</div>
+<!--video-->
+<div class="container mt-5 mb-5 text-center">
+  <h2 class="mb-4">Conoce más sobre nuestra misión 💙</h2>
+  <div class="ratio ratio-16x9" style="max-width: 800px; margin: 0 auto;">
+    <iframe 
+      src="https://www.youtube.com/embed/hqe2MecPbaQ" 
+      frameborder = 0
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      title="Video de AdoptApp" 
+      allowfullscreen>
+    </iframe>
+  </div>
 </div>
 {% endblock %}

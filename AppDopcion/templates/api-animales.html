@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block title %}Animales desde API{% endblock %}
+
+{% block content %}
+<h1 class="mb-4 titulo-api">
+  La siguiente sección fue hecha con el fin de promover la adopción con la fundación "Huachitos"
+</h1>
+
+<h2 class="mb-4 subtitulo-api">
+  Puedes visitarlos aquí: 
+  <a href="https://huachitos.cl" target="_blank" class="enlace-api">Huachitos</a>
+</h2>
+
+<h2 class="mb-4 subtitulo-api">
+  o puedes ver su API aquí: 
+  <a href="https://huachitos.cl/docs" target="_blank" class="enlace-api">API Huachitos</a>
+</h2>
+
+
+
+{% if animales %}
+<div class="row api-animales">
+    {% for animal in animales %}
+    <div class="col-md-4 mb-4">
+        <div class="card h-100">
+            <img src="{{ animal.imagen }}" class="card-img-top" alt="{{ animal.nombre }}">
+            <div class="card-body d-flex flex-column">
+                <h5 class="card-title">{{ animal.nombre }}</h5>
+                <p class="card-text">{{ animal.desc_fisica|safe }}</p>
+                
+                
+                <div class="mb-2">
+                    <span class="badge bg-primary">Tipo: {{ animal.tipo }}</span>
+                    <span class="badge bg-success">Sexo: {{ animal.sexo }}</span>
+                    <span class="badge bg-info text-dark">Edad: {{ animal.edad }}</span>
+                    <span class="badge bg-warning text-dark">{{ animal.region }} - {{ animal.comuna }}</span>
+                </div>
+
+                <a href="{{ animal.url }}" class="btn btn-primary mt-auto">Ver más</a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% else %}
+<p>No hay animales disponibles en este momento.</p>
+{% endif %}
+
+{% endblock %}

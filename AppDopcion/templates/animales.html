@@ -8,24 +8,65 @@
   <h2 class="title-text">🐾 Encuentra a tu próximo <span>MEJOR AMIGO</span> 🐾</h2>
 </div>
 
-<div class="row animales">
-  {% for animal in animales %}
-    <div class="col-md-4 mb-4">
-      <div class="card h-100">
-        <img src="{{ animal.imagen.url }}" class="card-img-top" alt="{{ animal.tipo }}">
-        <div class="card-body">
-          <h5 class="card-title">{{ animal.nombre }}</h5>
-          <p class="card-text">{{ animal.descripcion }}</p>
-          <p class="card-text">Edad: {{ animal.edad }}</p>
-          <p class="card-text">Tamaño: {{ animal.tamano }}</p>
-          <a href="{% url 'adoptar_animal' animal.id %}" class="btn-adoptar w-100">Adóptame ❤️</a>
+<div class="container mt-5">
+  <h2 class="mb-4 text-center">Nuestros Animales 🐾</h2>
+
+  <!-- Filtros -->
+  <form method="get" class="row g-3 mb-4">
+    <div class="col-md-4">
+      <label for="tipo" class="form-label">Tipo</label>
+      <select name="tipo" id="tipo" class="form-select">
+        <option value="">Todos</option>
+        <option value="Perro" {% if request.GET.tipo == "Perro" %}selected{% endif %}>Perro</option>
+        <option value="Gato" {% if request.GET.tipo == "Gato" %}selected{% endif %}>Gato</option>
+        <option value="Otro" {% if request.GET.tipo == "Otro" %}selected{% endif %}>Otro</option>
+      </select>
+    </div>
+
+    <div class="col-md-4">
+      <label for="tamano" class="form-label">Tamaño</label>
+      <select name="tamano" id="tamano" class="form-select">
+        <option value="">Todos</option>
+        <option value="Pequeño" {% if request.GET.tamano == "Pequeño" %}selected{% endif %}>Pequeño</option>
+        <option value="Mediano" {% if request.GET.tamano == "Mediano" %}selected{% endif %}>Mediano</option>
+        <option value="Grande" {% if request.GET.tamano == "Grande" %}selected{% endif %}>Grande</option>
+      </select>
+    </div>
+
+    <div class="col-md-4">
+      <label for="edad" class="form-label">Edad</label>
+      <select name="edad" id="edad" class="form-select">
+        <option value="">Todas</option>
+        <option value="joven" {% if request.GET.edad == "joven" %}selected{% endif %}>Cachorro (menos de 2 años)</option>
+        <option value="adulto" {% if request.GET.edad == "adulto" %}selected{% endif %}>Adulto (2-7 años)</option>
+        <option value="senior" {% if request.GET.edad == "senior" %}selected{% endif %}>Senior (más de 7 años)</option>
+      </select>
+    </div>
+
+                  <!-- boton pal filtro -->
+    <div class="col-12 text-center">
+      <button type="submit" class="btn btn-primary">Filtrar</button>
+    </div>
+  </form>
+
+  <!-- Lista de animales -->
+  <div class="row animales">
+    {% for animal in animales %}
+      <div class="col-md-4 mb-4">
+        <div class="card h-100">
+          <img src="{{ animal.imagen.url }}" class="card-img-top" alt="{{ animal.tipo }}">
+          <div class="card-body">
+            <h5 class="card-title">{{ animal.nombre }}</h5>
+            <p class="card-text">{{ animal.descripcion }}</p>
+            <p class="card-text">Edad: {{ animal.edad }}</p>
+            <p class="card-text">Tamaño: {{ animal.tamano }}</p>
+            <a href="{% url 'adoptar_animal' animal.id %}" class="btn-adoptar w-100">Adóptame ❤️</a>
+          </div>
         </div>
       </div>
-    </div>
-  {% endfor %}
+    {% empty %}
+      <p class="text-center">No se encontraron animales con esos filtros 🐾</p>
+    {% endfor %}
+  </div>
 </div>
-
-
-
 {% endblock %}
-<!-- <a href="{% url 'contacto' %}" class="btn btn-primary w-100">Adóptame ❤️</a> >  ESTO  va dentro de la clase yHAY QUE MODIFICARLO DESPUES  -->

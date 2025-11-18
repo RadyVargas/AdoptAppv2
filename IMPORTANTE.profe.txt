@@ -1,0 +1,9 @@
+Hola profe, el programa consume una API de la pagina "Huachitos" 
+tambien use el Login de django el cual guarda
+a los usuarios tambien en el admin. 
+La pagina muestra por default las opciones normales
+--------PERO AL REGISTRARSE MUESTRA LA PESTAÑA DE LA API------------ 
+y puse unos links directos tambien a la api y a su pagina web.
+eso saludos profe!
+django admin: root
+pass : 1234

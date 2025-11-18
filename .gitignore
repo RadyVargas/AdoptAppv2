@@ -1,19 +1,20 @@
-# Archivos de Python compilados
+# Python
 __pycache__/
-*.pyc
+*.py[cod]
+*.pyo
 
-# Carpeta de archivos estáticos de producción
-/staticfiles/
-
-# Base de datos local de SQLite
-db.sqlite3
-
-# Entornos virtuales
+# Virtual environments
 venv/
 env/
+*.sqlite3
 
-# Configuración de IDEs y editores
+# Django
+staticfiles/
+media/
+*.log
+
+# VSCode
 .vscode/
-.idea/
-*.sublime-project
-*.sublime-workspace
+
+# MacOS
+.DS_Store

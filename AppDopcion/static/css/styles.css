@@ -135,9 +135,8 @@ form button.btn-primary:hover {
   transform: scale(1.05);
 }
 
-/* Aplica solo a las tarjetas dentro de la sección de animales */
 .row.animales .card {
-    background-color: #3bef09 !important; /* el !important asegura que sobreescriba otras reglas */
+    background-color: #3bef09 !important; 
     border-radius: 15px;
     box-shadow: 0 6px 15px rgb(171, 250, 1);
     transition: transform 0.3s, box-shadow 0.3s;
@@ -152,3 +151,108 @@ form button.btn-primary:hover {
     padding: 1rem;
 }
 
+/* formulario */
+form.row.g-3.mb-4 {
+    background-color: rgba(10, 227, 242, 0.9); 
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+form select.form-select {
+    border-radius: 10px;
+    border: 1px solid #8e13e6;
+    padding: 0.4rem 0.6rem;
+    transition: all 0.2s ease;
+}
+
+form select.form-select:focus {
+    outline: none;
+    border-color: #43b4be; 
+    box-shadow: 0 0 5px rgba(67,180,190,0.5);
+}
+
+form button.btn-primary {
+    background: linear-gradient(135deg, #ff66d6, #9cff5e);
+    border: none;
+    font-weight: bold;
+    padding: 0.6rem 1.2rem;
+    border-radius: 12px;
+    transition: transform 0.3s, background 0.3s;
+}
+
+form button.btn-primary:hover {
+    transform: scale(1.05);
+    background: linear-gradient(135deg, #ff4cc2, #85ff3b);
+}
+
+/* Solo afecta a la página de API */
+.row.api-animales .card {
+    border-radius: 15px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+    background: linear-gradient(135deg, #f90d8b, #02d6f6);
+
+}
+
+.row.api-animales .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+.row.api-animales .card-img-top {
+    height: 200px;
+    object-fit: contain;
+    width: 100%;
+}
+
+.row.api-animales .card-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.row.api-animales .card-body .badge {
+    margin-right: 5px;
+    margin-bottom: 3px;
+    font-size: 0.85rem;
+}
+
+.row.api-animales .btn {
+    align-self: start;
+}
+/* Título principal de la sección API */
+.titulo-api {
+    font-family: 'Georgia', serif;
+    font-size: 2rem;
+    color: #022d59; /* azul brillante */
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+/* Subtítulos de la sección */
+.subtitulo-api {
+    font-family: 'Arial', sans-serif;
+    font-size: 1.5rem;
+    color: #292b4b;
+    margin-bottom: 0.8rem;
+    text-align: center;
+}
+
+/* Enlaces destacados */
+.enlace-api {
+    color: #b10076; /* color rosa vibrante */
+    font-weight: bold;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.enlace-api:hover {
+    color: #2079d2; /* cambia a azul al pasar el mouse */
+    text-decoration: underline;
+    transform: scale(1.05);
+}

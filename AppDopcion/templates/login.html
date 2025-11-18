@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+<div class="container" style="max-width: 400px; margin-top: 50px;">
+    <h2 class="mb-4 text-center">Iniciar Sesión</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary w-100">Entrar</button>
+    </form>
+    {% if form.errors %}
+    <div class="alert alert-danger mt-2">
+        Usuario o contraseña incorrectos.
+    </div>
+    {% endif %}
+</div>
+{% endblock %}
