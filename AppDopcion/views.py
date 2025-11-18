@@ -69,26 +69,7 @@ def adoptar_animal(request, animal_id):
 
 
 
-@login_required(login_url='login')
-def api_animales(request):
-    url = "https://huachitos.cl/api/animales"
-    headers = {"User-Agent": "Mozilla/5.0"}
 
-    try:
-        response = requests.get(url, headers=headers, timeout=10)
-        print("STATUS:", response.status_code)
-        print("CONTENT:", response.text[:200])  # solo los primeros 200 chars
-
-        response.raise_for_status()
-        data = response.json()
-        animales = data.get("data", [])
-    except Exception as e:
-        print("ERROR:", e)
-        animales = []
-
-    return render(request, "api-animales.html", {
-        "animales": animales
-    })
 
 
 
